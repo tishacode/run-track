@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/runtrack   # <- R2DBC (atenção: "postgresql")
+    username: run
+    password: run
+  flyway:
+    enabled: false
+    url: jdbc:postgresql://localhost:5432/runtrack    # <- JDBC p/ Flyway
+    user: run
+    password: run
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+# (se você usa as propriedades tipadas que criamos)
+runtrack:
+  partner:
+    base-url: http://localhost:9099
+  messaging:
+    exchange: runtrack.exchange
+    dlx: runtrack.exchange.dlx
+    queue-run-created: runtrack.queue.run-created
+    queue-run-created-dlq: runtrack.queue.run-created.dlq
+    queue-run-created-retry: runtrack.queue.run-created.retry
+    routing-key-run-created: run.created
+    routing-key-run-created-dlq: run.created.dlq
+    retry:
+      max-attempts: 3
+      backoff:
+        initial-ms: 500
+        multiplier: 2.0
+        max-ms: 5000
+      ttl-ms: 30000
