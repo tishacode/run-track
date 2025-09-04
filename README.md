@@ -37,3 +37,4 @@ com **Postgres (R2DBC)** e **RabbitMQ** para mensageria.
 ### Subindo infra
 ```bash
 docker compose up -d postgres rabbitmq
+# run-track
