@@ -1,0 +1,62 @@
+Libs essenciais
+
+WebFlux: Framework reativo do Spring (substituto moderno do MVC tradicional).
+→ Júnior deve entender diferenças básicas de MVC vs reativo.
+mercado usa reativo para alta escala; precisa conhecer Flux, Mono.
+Mesmo sem dominar, deve entender por que existe.
+→ Usei porque é moderno, escalável e combina com R2DBC.
+=> No RunTrack: endpoints REST /api/runs usam Flux/Mono.
+
+
+Validation (Jakarta Bean Validation): Validações via anotações, Regras @NotBlank, @Min.
+→ Júnior precisa validar inputs de API, evita regra duplicada no código; já valida input no nível do framework.
+→ Usei para validar DTOs de corridas.
+=> No RunTrack: usamos para validar DTOs (ex.: distanceKm > 0).
+
+
+R2DBC Postgres: Driver reativo para Postgres sem JDBC bloqueante.
+→ Júnior aprende acesso a DB sem JDBC bloqueante - JDBC é bloqueante, R2DBC é moderno.
+Precisa saber diferença entre Flux/Mono e ResultSet..
+→ Usei para persistir corridas.
+=> No RunTrack: usamos para salvar/listar corridas sem travar threads.
+
+Flyway: Migrações de schema - bd.
+→ Júnior deve entender versionamento de banco - garante que todos os ambientes
+tenham mesmo schema de DB, controlado por versão..
+→ Usei para criar tabela runs e seeds.
+=> No RunTrack: usamos V1__create_runs.sql e V2__seed_runs.sql.
+
+
+Spring AMQP/RabbitMQ: Mensageria baseada em filas e tópicos..
+→ Júnior aprende publish/subscribe e desacoplamento - essencial para microserviços desacoplados;
+precisa entender conceito de exchange, queue, routing key..
+→ Usei para publicar evento “corrida criada”.
+=> No RunTrack: publicamos evento run.created quando corrida é salva.
+
+MockK: Mock em testes unitários Kotlin.
+→ Júnior precisa entender teste isolado - permite testar unidade sem chamar DB/API real.
+→ Usei para testar use cases sem DB real.
+=> No RunTrack: usamos para simular respostas de RunRepositoryPort em testes de use case.
+
+WireMock: Stub de APIs externas.
+→ Júnior deve simular integrações, sistemas terceiros em testes.
+→ Usei para simular “parceiro de corridas”.
+=> No RunTrack: simulamos parceiro externo (/partner/runs).
+
+
+Testcontainers: Sobe containers (Postgres, RabbitMQ) em testes.
+→ Júnior aprende teste de integração realista, sem precisar de infra manual.
+→ Usei para garantir DB/MQ igual em dev/test.
+=> No RunTrack: subimos Postgres e RabbitMQ reais nos testes de integração.
+
+
+springdoc-openapi: Gera docs da API.
+→ Júnior deve conhecer Swagger - facilita consumir/testar endpoints.
+→ Usei para expor /swagger-ui.html.
+=> No RunTrack: acessamos /swagger-ui.html para testar corridas.
+
+
+Actuator + Micrometer: Healthcheck e métricas - Actuator expõe endpoints de saúde e métricas;
+Micrometer envia para Prometheus/Grafana..
+→ Júnior precisa entender monitoramento.
+→ Usei para expor /actuator/health, /metrics, /prometheus.

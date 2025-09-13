@@ -1,0 +1,45 @@
+Checklist de ferramentas
+
+JDK 21: Máquina virtual Java moderna.
+→ O júnior deve saber instalar/configurar, pois sem ela o código Kotlin/Spring nem compila.
+→ Usei no projeto porque Spring Boot 3 exige JDK 17+, e o 21 já é LTS.
+=> O que é: Ambiente para compilar e rodar código Java/Kotlin.
+=> Por que júnior deve saber: sem JDK instalado corretamente, nada compila.
+É base da stack. Precisa entender variáveis de ambiente (JAVA_HOME) e versões LTS (ex.: 17, 21).
+=> No RunTrack: usamos JDK 21 porque o Spring Boot 3 exige mínimo JDK 17, e a versão 21 é LTS (mais estável).
+
+
+Gradle: Gerenciador de build/dependências.
+→ Júnior precisa entender para rodar ./gradlew build, adicionar libs e rodar testes.
+→ Usei para gerenciar todas as libs do RunTrack.
+=> O que é: Ferramenta de build e gerenciamento de dependências (similar ao Maven).
+=> Por que júnior deve saber: precisa entender como adicionar libs (implementation, testImplementation),
+rodar ./gradlew build, ./gradlew test. Sem isso não baixa dependências nem roda o projeto.
+=> No RunTrack: usamos build.gradle.kts (Kotlin DSL) para manter coerência com a linguagem principal.
+
+
+Docker/Compose: Containers (ex.: Postgres e RabbitMQ).
+→ Essencial saber subir dependências externas localmente.
+→ Usei para garantir que DB e mensageria rodem sem instalar nada “na mão”.
+=> O que é: Docker cria containers isolados; Compose orquestra múltiplos containers
+(ex.: banco + mensageria).
+=> Por que júnior deve saber: facilita rodar serviços externos (DB, Rabbit) sem instalar manualmente.
+Isso evita o famoso “na minha máquina funciona”.
+=> No RunTrack: um docker-compose.yml sobe Postgres + RabbitMQ para dev/test.
+
+
+Git: Controle de versão.
+→ Júnior deve entender clone, branch, commit, push.
+→ Usei para versionar e preparar CI/CD.
+=> O que é: Controle de versão (branches, commits, pull requests).
+=> Por que júnior deve saber: básico para colaborar em equipe.
+Precisa entender merge, rebase e resolver conflitos simples.
+=> No RunTrack: usamos Git para versionar código, CI/CD e integração com GitHub Actions.
+
+
+IDE (IntelliJ/VSCode): Ambiente de edição.
+→ Precisa dominar atalhos básicos, depuração, plugins.
+→ Usei para facilitar desenvolvimento Kotlin/Spring.
+=> O que é: Ferramenta para escrever código com suporte a refatoração, debug, plugins.
+=> Por que júnior deve saber: acelera desenvolvimento, evita erros de sintaxe, mostra sugestões.
+=> No RunTrack: IntelliJ

@@ -1,0 +1,40 @@
+
+1. Classes de Domínio
+
+Arquivo: core/domain/Run.kt
+
+data class Run(
+    val id: String?,
+    val date: String,
+    val distanceKm: Double,
+    val durationMin: Double,
+    val route: String? = null
+) {
+    fun paceMinPerKm(): Double = durationMin / distanceKm
+}
+
+Aqui temos:
+Encapsulamento: os atributos da corrida ficam dentro da classe.
+Comportamento: a função paceMinPerKm() é método da classe, ligado ao objeto.
+Abstração: representa o conceito de uma corrida real no sistema.
+
+
+2. Entities de Persistência
+
+Arquivo: infra/db/RunEntity.kt
+
+@Table("runs")
+data class RunEntity(
+    @Id val id: UUID,
+    val date: LocalDate,
+    val distanceKm: Double,
+    val durationMin: Double,
+    val route: String?
+)
+É outro exemplo de classe orientada a objeto:
+Representa uma entidade de banco.
+Mapeia atributos de tabela para propriedades do objeto.
+Usa conversores toDomain() e toEntity() para transformar entre camadas —
+isso é polimorfismo estrutural na prática (um mesmo conceito representado de formas diferentes).
+
+

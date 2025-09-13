@@ -1,0 +1,9 @@
+Actuator + Prometheus
+
+Actuator: monitora app (health, métricas).
+
+Prometheus: coleta métricas.
+
+Júnior deve entender para debug/observabilidade.
+
+Usei para healthcheck do RunTrack.

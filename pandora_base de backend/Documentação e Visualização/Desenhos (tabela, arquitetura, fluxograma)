@@ -1,0 +1,16 @@
+Desenhos (tabela, arquitetura, fluxograma)
+
+Representam graficamente entidades e fluxos.
+
+Júnior deve saber interpretar diagramas.
+
+Usei para fixar aprendizado (runs table, hexágono, POST flow).
+
+##
+
+=> Por que júnior deve saber: diagramas ajudam a entender sistema sem ler código.
+
+=> No RunTrack:
+ 1. tabela mostra estrutura de dados (runs),
+ 2. arquitetura mostra camadas (Controller → UseCase → Ports → Adapters → DB/MQ),
+ 3. fluxograma mostra sequência POST /api/runs.

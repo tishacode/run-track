@@ -39,7 +39,7 @@ dependencies {
     // Mensageria (RabbitMQ)
     implementation("org.springframework.boot:spring-boot-starter-amqp")
 
-    // Documentação da API (Swagger/OpenAPI)
+    // Documentação da API (OpenAPISwagger/OpenAPI)
     implementation("org.springdoc:springdoc-openapi-starter-webflux-ui:2.5.0")
 
     // Observabilidade

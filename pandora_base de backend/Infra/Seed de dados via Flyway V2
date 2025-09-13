@@ -1,0 +1,9 @@
+Seed de dados via Flyway V2
+
+Preenche DB com dados iniciais.
+
+Júnior deve saber popular DB em dev/test sem depender de scripts manuais
+
+Usei para ter corridas de exemplo (sem precisar cadastrar manualmente).
+
+=> No RunTrack: criamos corridas de exemplo (5km, 10km)

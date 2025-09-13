@@ -1,0 +1,23 @@
+Publisher, listener, exchange/queue/binding.
+
+Júnior deve entender mensagens assíncronas.
+
+Usei para mostrar que corrida salva dispara evento “run.created”.
+
+###
+
+## Publisher
+Envia evento para o Rabbit.
+Júnior deve entender que é assíncrono (não espera consumidor).
+
+## Listener
+Consome evento da fila.
+Júnior deve entender que pode haver múltiplos consumidores.
+
+## Exchange / Queue / Binding
+Mecanismo de roteamento de mensagens.
+Júnior deve entender diferença de fanout, direct, topic.
+
+## No RunTrack
+Quando corrida é salva, publicamos evento run.created.
+Listener imprime log ou dispara outra ação (ex.: enviar email).

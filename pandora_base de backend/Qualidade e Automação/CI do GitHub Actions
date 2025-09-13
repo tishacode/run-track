@@ -1,0 +1,7 @@
+CI do GitHub Actions
+
+Executa build/test/lint no PR.
+
+Júnior deve entender fluxo CI/CD.
+
+Usei para simular pipeline de entrega.

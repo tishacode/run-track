@@ -1,0 +1,9 @@
+Docker Compose com Postgres e RabbitMQ
+
+Facilita subir infra essencial com um comando.
+
+Júnior deve saber rodar `docker compose up`.
+
+Usei para garantir que todos tenham mesma base/mensageria.
+
+=> No RunTrack: docker compose up sobe banco + mensageria.

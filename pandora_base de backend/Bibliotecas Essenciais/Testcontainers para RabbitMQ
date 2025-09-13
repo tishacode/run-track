@@ -1,0 +1,7 @@
+Testcontainers para RabbitMQ
+
+Permite rodar Rabbit real em teste de integração.
+
+Júnior deve entender diferença de teste unitário vs integração.
+
+Usei para validar publish/consume de eventos.
